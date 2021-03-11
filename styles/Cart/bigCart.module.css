@@ -1,0 +1,100 @@
+.bigCart-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.tableHeader {
+  text-align: center;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.tableHeader th {
+  font-weight: 400;
+  min-width: 100px;
+  padding: 10px;
+  border-bottom: 1px solid darkgrey;
+}
+
+.tableHeader .mycartTitle {
+  text-align: left;
+  /* padding-left: 20px; */
+}
+
+.tableHeader .deleteHeader {
+  min-width: 80px;
+}
+
+.tableRow td {
+  text-align: center;
+  padding: 15px;
+  vertical-align: top;
+}
+.bigCartContainer{
+  padding: 20px 50px;
+}
+.tableRow .image {
+  position: relative;
+  border-radius: 7px;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+  cursor: pointer;
+}
+.tableRow .image .image-contain {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
+}
+
+.tableRow .image .image-cover {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+}
+
+.tableRow button {
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border: none;
+  display: block;
+}
+.marginTopTableContainer {
+  margin-top: 8px;
+}
+.tableRow .quantityBtn {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+}
+
+.tableRow .itemDescription {
+  text-align: left;
+  max-width: 300px;
+}
+
+.tableRow .itemDescriptionText {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 20px;
+}
+
+.tableRow .item-availability {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 8px;
+}

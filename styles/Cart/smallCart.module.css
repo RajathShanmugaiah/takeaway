@@ -1,0 +1,170 @@
+.cartContainer {
+  position: relative;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 400px;
+  box-shadow:0 0 8px 0 rgb(0 0 0 / 20%);
+  border-radius: 8px;
+  padding: 7%;
+}
+
+.cartHeader {
+  text-transform: uppercase;
+}
+
+.productCard .deleteBtn {
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  display: flex;
+}
+
+.productCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 15px 0px;
+  position: relative;
+}
+
+.productCard .item-image {
+  min-width: 90px;
+  min-height: 90px;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.productCard .item-image .img-contain {
+  width: 100%;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.productCard .item-image .img-cover {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.productCard .quantityBtn {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid black;
+  margin: 5px 0px;
+}
+
+.productCard .quantityBtn button {
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border: none;
+  display: block;
+}
+
+.productCard .itemInfo {
+  width: 45%;
+}
+
+.productCard .itemTitle {
+  font-weight: 500px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  display: flex;
+}
+
+.productCard .item-description {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.1rem;
+  margin: 3px 0px;
+}
+
+.productCard .itemPrice {
+  font-size: 1.4rem;
+}
+
+.productCard .item-option {
+  color: darkgray;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.totalCart {
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+.btnCart {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+}
+
+.btnSplit {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.btnSplit .splitLine {
+  border-bottom: 1px solid black;
+  width: 45%;
+}
+
+.cartTitle {
+  margin: 20px 0px;
+  border-bottom: 1px solid darkgray;
+  padding-bottom: 20px;
+}
+.marginMobileItem {
+  text-align: center;
+  margin-top: 5rem;
+}
+.coupon-line-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid darkgray;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .cartContainer {
+    position: relative;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 0px;
+  }
+  .marginMobileItem {
+    text-align: center;
+    margin-top: 15rem;
+  }
+  .cartMobileAccordion {
+    display: block;
+  }
+
+  .couponLineCart {
+    display: none;
+  }
+}

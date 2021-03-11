@@ -1,0 +1,165 @@
+.checkoutContainer {
+  padding: 20px 50px;
+  width: 65%;
+}
+
+.checkoutContainer .tab-title {
+  margin-top: 20px;
+}
+
+.checkout-user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 15px;
+  margin-top: 20px;
+}
+
+.checkout-tabs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.checkout-tabs .MuiTabs-root {
+  width: 100%;
+}
+
+.checkout-tabs .one-tab {
+  width: 50%;
+  text-align: center;
+  font-size: 1.3rem;
+  border-bottom: 1px solid darkgray;
+  padding-bottom: 5px;
+  color: darkgray;
+  text-transform: capitalize;
+}
+
+.checkout-tabs .Mui-selected {
+  color: black;
+}
+
+.checkout-tabs span[class^='PrivateTabIndicator'],
+.checkout-tabs span[class*=' PrivateTabIndicator'],
+.checkout-tabs span[class^='jss'],
+.checkout-tabs span[class*=' jss'] {
+  background-color: black !important;
+}
+
+.checkoutContainer .orderBtn {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.checkoutContainer .pickup-disclaimer {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.paymentCardContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}
+
+.paymentCard{
+  height: 90px;
+  width: 90px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paymentCard span {
+  font-weight: 500;
+  font-size: 16px;
+  opacity: 1;
+  display: inline-block;
+  z-index: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.paymentCard span::before {
+  font-weight: 900;
+  font-size: 36px;
+  color: rgba(12, 12, 12, 0.2);
+  position: absolute;
+  content: attr(label);
+  top: 40px;
+  left: 30px;
+  z-index: -1;
+  white-space: nowrap;
+}
+
+.selected span::before {
+  /* color: #6fcf97; */
+  color: var(--link-color);
+}
+
+.selected {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.paymentCard img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 27px;
+  width: 27px;
+}
+
+.discountInput {
+  width: 70%;
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+}
+
+.discountInput button {
+  min-width: 96px;
+  height: 31px;
+  border: none;
+  margin: 0px;
+  margin-left: 15px;
+}
+
+.voucher-or-coupon-title {
+  text-transform: uppercase;
+}
+
+.MuiCheckbox-colorPrimary.Mui-checked {
+  color: var(--primary-color) !important;
+}
+
+@media screen and (max-width: 600px) {
+  .checkoutContainer {
+    padding: 30px 10px;
+    margin-bottom: 150px;
+    padding-bottom: 50px;
+    width: 100%;
+  }
+
+  .checkout-user-info {
+    display: block;
+  }
+
+  .checkoutContainer .tab-title {
+    display: none;
+  }
+
+  .discountInput {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

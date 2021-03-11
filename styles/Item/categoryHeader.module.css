@@ -1,0 +1,45 @@
+.categoryHeaderContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 20px;
+
+}
+.categoryImg {
+    height: 100px;
+    min-width: 100px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+#itemCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 21px;
+    column-gap: 21px;
+    align-items: center;
+    max-width: 700px;
+    padding: 5px;
+    margin: 0 auto;
+}
+#itemCards .card .cardImage{
+    height: 180px;
+    border-radius: 2px;
+    background-size: cover;
+    background-position: 50%;
+    width: 100%;
+}
+
+#itemCards .card .cardTitle{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4em;
+    filter: drop-shadow(black 2px 4px 6px);
+    transform: translate(0%, 80%);
+    text-align:center;
+}
+

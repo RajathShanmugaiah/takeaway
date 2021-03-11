@@ -1,0 +1,90 @@
+#categoryItemCards {
+    margin:-10px -15px;
+    padding: 0px 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 2px;
+}
+
+#categoryItemCards .card{
+    background-color: #ffffff;
+    padding: 15px;
+    width: 95%;
+    cursor: pointer;
+    overflow: hidden;
+    flex-grow: 10;
+    border-bottom: 2px solid #f7f7f7;
+}
+#categoryItemCards .card:hover{
+    box-shadow: 0px 0px 8px 0 rgb(0 0 0 / 10%);
+    transition: box-shadow 500ms ease;
+}
+.mealHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.mealHeader div {
+    flex-grow: 1;
+}
+.mealContainer{
+    flex-grow: 10;
+}
+.mealHeader svg {
+    margin-left: 5px;
+}
+.cartButton {
+    display: contents;
+    z-index: 0;
+
+    color: #121212;
+    padding: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #fff;
+    border-width: 0;
+    position: relative;
+
+    border-radius: 20px;
+    height: 36px;
+    background: #000;
+    z-index: 0;
+    cursor: pointer;
+}
+.cartButtonCover{
+    border-radius: 20px;
+    height: 36px;
+    width: 36px;
+    background: #000;
+    z-index: unset;
+}
+.MuiSvgIcon-root {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+}
+.cartButton svg {
+    z-index: 1;
+    position: relative;
+    top: 14%;
+    color: #f7f7f7;
+}
+
+.cartButtonCover .clicked {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    border-radius: 2px;
+    background: #e1e1e1;
+    z-index: -1;
+    top: 10px;
+    left: 0;
+    transform: translateY(0);
+}

@@ -1,0 +1,11 @@
+const PAYMENT_METHODS = ['sepa_debit', 'card'];
+
+const AVAILABLE_PAYMENT_METHODS = ['sepa_debit', 'card', 'sofort'];
+
+//pk_test_51HXtPEB487DdbDtDsDlZhRZbPtgveEqSaVbTtwFTxS7G8dxnN36Q57J9RpPV6dI3vTMoz0QelnQXKoOTkursfYpS003BTJXQ0H
+//'pk_live_51HXtPEB487DdbDtDMzkn2B8HukbfYUmMyJpinHBn5k3j6hihHT9dxBNJwe1B6Ruo8M2qgQu4lxP3O1QhLxW1udLC00t5DtHq2S';
+
+const STRIPE_KEY =
+  'pk_test_51HXtPEB487DdbDtDsDlZhRZbPtgveEqSaVbTtwFTxS7G8dxnN36Q57J9RpPV6dI3vTMoz0QelnQXKoOTkursfYpS003BTJXQ0H';
+
+export { PAYMENT_METHODS, STRIPE_KEY, AVAILABLE_PAYMENT_METHODS };

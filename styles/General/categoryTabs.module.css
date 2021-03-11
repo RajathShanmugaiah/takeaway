@@ -1,0 +1,50 @@
+.categoryTabs {
+    width: 100%;
+    border-bottom: 1px solid darkgray;
+    margin: auto;
+    position:sticky;
+    top: 6em;
+    background: white;
+    z-index: 1000;
+  }
+  
+  .categoryTabs .MuiTabs-root {
+    max-width: 100vw;
+    /* overflow: scroll; */
+  }
+  
+  .categoryTabs .MuiTab-wrapper {
+    color: darkgray;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+  }
+  
+  .categoryTabs a {
+    color: darkgray;
+  }
+  
+  .categoryTabs .Mui-selected a {
+    color: black !important;
+  }
+  
+  .categoryTabs a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .categoryTabs .Mui-selected .MuiTab-wrapper {
+    color: black;
+  }
+  
+  .categoryTabs span[class^='PrivateTabIndicator'],
+  .categoryTabs span[class*=' PrivateTabIndicator'],
+  .categoryTabs span[class^='jss'],
+  .categoryTabs span[class*=' jss'] {
+    background-color: black !important;
+  }
+  @media screen and (max-width: 600px) {
+    .categoryTabs {
+      top: 3.5rem;
+    }
+  }
+  
