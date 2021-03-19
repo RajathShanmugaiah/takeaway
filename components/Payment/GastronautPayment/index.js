@@ -12,7 +12,6 @@ import {
   DefaultCustomerInformationForm,
   SuccessMessage
 } from './Components';
-import styles from './Components/gastronautPayment.css';
 import { PAYMENT_METHODS, STRIPE_KEY } from './defaults';
 // import { ApiContext } from '../Contexts/ApiContext';
 import { useRouter } from 'next/router';

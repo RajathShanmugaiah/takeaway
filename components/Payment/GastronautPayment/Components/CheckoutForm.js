@@ -16,7 +16,7 @@ import {
 } from '../helperFunctions.js';
 import { PAYMENT_METHODS } from '../defaults';
 import { Box, Button, CircularProgress, Typography } from '@material-ui/core';
-import './gastronautPayment.css';
+// import './gastronautPayment.module.css';
 import useTranslations from '../../../../hooks/useTranslations';
 import PaymentPageJson from '../../../../config/translations/payment.json';
 

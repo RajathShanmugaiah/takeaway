@@ -3,16 +3,16 @@ import Link from 'next/link';
 import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 import PrintRoundedIcon from '@material-ui/icons/PrintRounded';
 import { IconButton } from '@material-ui/core';
-import Icon from '../../components/Icon';
-import '../../styles/Payment/success.css';
+import ArrowBackRoundedIcon from '@material-ui/icons/ArrowBackRounded';
+import styles from '../../styles/Payment/success.module.css';
 import useTranslations from '../../hooks/useTranslations';
 import CartPageJson from '../../config/translations/cartpage.json';
 import SuccessPageJson from '../../config/translations/successpage.json';
 
 const CartProducts = ({ item }) => {
   return (
-    <div className='cart-product-container'>
-      <div className='cart-product-title'>
+    <div className={styles.cartProductContainer}>
+      <div className={styles.cartProductTitle}>
         {item.product ? item.product.title : 'ProductTitle'}
       </div>
       <div>{item.quantity}</div>
@@ -32,37 +32,38 @@ const CartProducts = ({ item }) => {
   );
 };
 
-const SuccessPage = ({ restaurantId, savedOrder, language = 'de',calculteShipping = () => {}, shippingCost }) => {
-  const {
-    cart,
-    customer,
-    address,
-    paymentMethod,
-    orderMethod,
-    orderNumber,
-    coupon,
-    voucher
-  } = savedOrder;
-  const date = new Date().toISOString().slice(0, 10);
-  const TodayDate = date.split('-').reverse().join('-');
+const SuccessPage = ({ restaurantId, savedOrder, language = 'de'}) => {
+  console.log(savedOrder);
+  // const {
+  //   cart,
+  //   customer,
+  //   address,
+  //   paymentMethod,
+  //   orderMethod,
+  //   orderNumber,
+  //   coupon,
+  //   voucher
+  // } = savedOrder;
+  // const date = new Date().toISOString().slice(0, 10);
+  // const TodayDate = date.split('-').reverse().join('-');
 
-  const pricesArray = cart.map(item => {
-    if (!item.option) {
-      return item.product.price * item.quantity;
-    } else {
-      return item.option.price * item.quantity;
-    }
-  });
-  const subTotal = pricesArray.reduce((a, item) => item + a, 0);
+  // const pricesArray = cart.map(item => {
+  //   if (!item.option) {
+  //     return item.product.price * item.quantity;
+  //   } else {
+  //     return item.option.price * item.quantity;
+  //   }
+  // });
+  // const subTotal = pricesArray.reduce((a, item) => item + a, 0);
 
-  let discountAmount = 0;
-  if (coupon?.id) {
-    coupon.type === 'percentage'
-      ? (discountAmount += (subTotal * coupon.amount) / 100)
-      : (discountAmount += coupon.amount);
-  }
+  // let discountAmount = 0;
+  // if (coupon?.id) {
+  //   coupon.type === 'percentage'
+  //     ? (discountAmount += (subTotal * coupon.amount) / 100)
+  //     : (discountAmount += coupon.amount);
+  // }
 
-  const totalPrice = subTotal + (shippingCost > 0 && activeTab !== 'Take Away' ? shippingCost : 0) - discountAmount;
+  // const totalPrice = subTotal + (shippingCost > 0 && activeTab !== 'Take Away' ? shippingCost : 0) - discountAmount;
 
   const { amountText, priceText, deliveryText, totalText } = useTranslations(
     CartPageJson,
@@ -83,17 +84,17 @@ const SuccessPage = ({ restaurantId, savedOrder, language = 'de',calculteShippin
 
   return (
     <>
-      <div className='success-icon-container' onLoad={() => calculteShipping()}>
-        <div className='success-icon'>
-          <div className='success-icon__tip'></div>
-          <div className='success-icon__long'></div>
+      {/* <div className={styles.successIconContainer} onLoad={() => calculteShipping()}>
+        <div className={styles.successIcon}>
+          <div className={styles.successIcon__tip}></div>
+          <div className={styles.successIcon__long}></div>
         </div>
 
         <h3>{thankYouText}</h3>
       </div>
-      <div className='success-payment-container'>
-        <div className='cart-product-container first-line'>
-          <div className='cart-product-title'>{productNameText}</div>
+      <div className={styles.successPaymentContainer}>
+        <div className={ `${styles.cartProductContainer}` `${firstLine}`}>
+          <div className={tyles.cartProductTitle}>{productNameText}</div>
           <div>{amountText}</div>
           <div>{priceText}</div>
           <div>{totalText}</div>
@@ -105,14 +106,14 @@ const SuccessPage = ({ restaurantId, savedOrder, language = 'de',calculteShippin
           })}
         </div>
 
-        <div className='success-total-price'>
-          <div className='success-price-empty-part'></div>
-          <div className='success-price-full-part'>
-            <div className='success-price-one-line'>
+        <div className={styles.successTotalPrice}>
+          <div className={styles.successPriceEmptyPart}></div>
+          <div className={styles.successPriceFullPart}>
+            <div className={styles.successPriceOneLine}>
               <h6>{subTotalText} :</h6>
               <div>€{(subTotal / 100).toFixed(2).replace('.', ',')}</div>
             </div>
-            <div className='success-price-one-line'>
+            <div className={styles.successPriceOneLine}>
               <h6>{deliveryText} :</h6>
               <div>
                 {!shippingCost
@@ -121,7 +122,7 @@ const SuccessPage = ({ restaurantId, savedOrder, language = 'de',calculteShippin
               </div>
             </div>
             {coupon?.id && (
-              <div className='success-price-one-line'>
+              <div className={styles.successPriceOneLine}>
                 <h6>COUPON :</h6>
                 <div>
                   - {coupon.amount}
@@ -129,19 +130,19 @@ const SuccessPage = ({ restaurantId, savedOrder, language = 'de',calculteShippin
                 </div>
               </div>
             )}
-            <div className='success-price-one-line'>
+            <div className={styles.successPriceOneLine}>
               <h6>{totalText} :</h6>
               <div>€{(totalPrice / 100).toFixed(2).replace('.', ',')}</div>
             </div>
           </div>
         </div>
-        <div className='success-order-date'>
+        <div className={styles.successOrderDate}>
           <h6>{orderInfoText}</h6>
           <div>
             {orderDate} : {TodayDate}
           </div>
         </div>
-        <div className='success-customer-info'>
+        <div className={styles.successCustomerInfo}>
           <div>
             <h6>{nameText}</h6>
             <div>{customer && customer.name}</div>
@@ -163,11 +164,11 @@ const SuccessPage = ({ restaurantId, savedOrder, language = 'de',calculteShippin
           </div>
         </div>
       </div>
-      <div className='success-links'>
+      <div className={styles.successLinks}>
         <div>
           <Link href={`/${restaurantId}/products`} passHref>
-            <a className='success-continue-shopping'>
-              <Icon icon='leftArrow' version='v1' button />
+            <a className={styles.successContinueShopping}>
+              <ArrowBackRoundedIcon />
               <h6>{continueText}</h6>
             </a>
           </Link>
@@ -176,13 +177,13 @@ const SuccessPage = ({ restaurantId, savedOrder, language = 'de',calculteShippin
           <IconButton>
             <GetAppRoundedIcon />
           </IconButton>
-          <span className='success-print-icon'>
+          <span className={styles.successPrintIcon}>
             <IconButton>
               <PrintRoundedIcon />
             </IconButton>
           </span>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

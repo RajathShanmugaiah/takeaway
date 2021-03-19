@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Box, Typography } from '@material-ui/core';
-import './gastronautPayment.css';
+// import './gastronautPayment.css';
 import ErrorIcon from '@material-ui/icons/Error';
 
 const translations = {

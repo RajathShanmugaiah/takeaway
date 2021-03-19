@@ -95,22 +95,23 @@ const CheckoutUserInfo = ({
     handleUserInfo = () => {},
     additional,
     setAdditional,
-    checkoutTexts = {}
+    checkoutTexts = {},
+    handleConfirmCommand = () => {}
   }) => {
     const handleChange = e => {
       const { name, value } = e.target;
-  
       const newAdditional = JSON.parse(JSON.stringify(additional));
       const newEmpty = newAdditional.emptyField.filter(item => item !== name);
       newAdditional.emptyField = [...newEmpty];
   
       const newInfo = JSON.parse(JSON.stringify(userInfo));
+      console.log( newInfo )
       newInfo[name] = value;
       handleUserInfo(newInfo);
   
       setAdditional(newAdditional);
     };
-  
+
     const handleBlur = e => {
       const { required, name, value } = e.target;
       if (required && !value) {
@@ -126,7 +127,7 @@ const CheckoutUserInfo = ({
     };
   
     return (
-      <form className='checkout-user-info'>
+      <form className={styles.checkoutUserInfo}>
         {tab.fields.map((field, i) => (
           <TextField
             fullWidth
@@ -150,6 +151,10 @@ const CheckOutForm = ({
     cart = [],
     restaurantId = '',
     language = 'de',
+    handleUserInfo = () => {},
+    handleConfirmCommand = () => {},
+    handleCoupon = () => {},
+    handleVoucher = () => {},
     deleteItemFromCart = () =>{},
     increaseItemFromCart = () =>{},
     decreaseItemFromCart =() =>{},
@@ -187,6 +192,14 @@ const totalPriceDiscounted = totalPrice - discountAmount;
 
 const totalProducts = cart.reduce((acc, item) => item.quantity + acc, 0);
 
+const onValidateCommand = () => {
+  handleConfirmCommand({
+    additional,
+    paymentOption
+  });
+};
+
+    console.log(tabs.find(tab => tab.id === 'Take Away'))
     return(
         <div className={styles.checkoutContainer} >
                 <h5>Customer Information</h5>
@@ -196,7 +209,10 @@ const totalProducts = cart.reduce((acc, item) => item.quantity + acc, 0);
                         userInfo,
                         additional,
                         setAdditional,
-                        checkoutTexts
+                        checkoutTexts,
+                        handleUserInfo,
+                        checkoutTexts,
+                        handleConfirmCommand
                         }}
                     />
 
@@ -286,11 +302,27 @@ const totalProducts = cart.reduce((acc, item) => item.quantity + acc, 0);
                   </span>
                 }
               />
-              <button className={`${styles.orderBtn} hidden-mobile`} >
+              <button className={`${styles.orderBtn} hidden-mobile`} onClick={onValidateCommand} >
                 {orderNowText} €
-                {(totalPriceDiscounted / 100).toFixed(2).replace('.', ',')}
+                {(totalPriceDiscounted).toFixed(2).replace('.', ',')}
               </button>
           </div>
+
+          <div className='hidden-desktop'>
+            <CartAccordionMobile
+              totalPrice={totalPriceDiscounted}
+              {...{
+                cart,
+                totalProducts,
+                restaurantId,
+                onValidateCommand,
+                userInfo,
+                language
+              }}
+              onCheckout={true}
+            />
+         </div>
+
         </div>
     )
 }

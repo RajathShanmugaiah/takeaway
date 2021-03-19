@@ -118,7 +118,29 @@
   #header .header-search-input:focus {
     outline: none;
   }
-  
+
+.footerSettings {
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+}
+
+.popOverTitle{
+  position: sticky;
+  top: 0;
+  width: 270px;
+  z-index: 1000;
+  background-color: white ;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  }
+
+  .allergensContainer{
+    margin-top: 1rem;
+  }
+
+
   @media screen and (max-width: 1136px) {
     #header li {
       font-size: 1rem;

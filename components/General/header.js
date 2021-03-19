@@ -14,9 +14,12 @@ import {
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import SettingsRoundedIcon from '@material-ui/icons/SettingsRounded';
 import ArrowBackRoundedIcon from '@material-ui/icons/ArrowBackRounded';
 import SmallCart from '../Cart/SmallCart';
+import Filter from './filter';
+import FoodTypes from './foodTypes';
 
 const availableLanguages = ['de', 'en', 'fr'];
 
@@ -24,12 +27,14 @@ const DesktopActionButtons = ({
     setAnchorEl,
     setAnchorLang,
     setAnchorSearch,
+    setAnchorSettings,
     language,
     cart
   }) => {
     return (
       <div className={styles.actionButtonsDesktop}>
-        <IconButton>
+        <IconButton
+          onClick={e => setAnchorSettings(e.currentTarget)} >
             <SettingsRoundedIcon />
         </IconButton>
         <IconButton
@@ -59,11 +64,12 @@ const DesktopActionButtons = ({
   const MobileActionButtons = ({
     restaurantId,
     setAnchorLang,
-    language
+    language,
+    setAnchorSettings
   }) => {
     return (
       <div className={styles.actionButtonsMobile}>
-          <IconButton>
+          <IconButton onClick={e => setAnchorSettings(e.currentTarget)} >
             <SettingsRoundedIcon />
         </IconButton>
         <IconButton
@@ -93,6 +99,10 @@ const Header = ({
     restaurantId,
     language = 'de',
     cart,
+    preferences,
+    setPreferences,
+    allergens,
+    setAllergens,
     data,
     handleLanguage =() =>{},
     deleteItemFromCart = () =>{},
@@ -102,7 +112,8 @@ const Header = ({
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorLang, setAnchorLang] = useState(null);
     const [anchorSearch, setAnchorSearch] = useState(null);
-
+    const [anchorSettings, setAnchorSettings] = useState(null);
+    const DietTypes = ["vegan","vegetarian","alkoholic"]
     return (
       <>
         <header id={styles.header}>
@@ -120,10 +131,10 @@ const Header = ({
   
           <div className={styles.headerElem}>
             <DesktopActionButtons
-                {...{ setAnchorEl, setAnchorLang, setAnchorSearch, language, cart }}
+                {...{ setAnchorEl, setAnchorLang, setAnchorSearch,setAnchorSettings, language, cart }}
             />
             <MobileActionButtons
-                {...{ restaurantId, setAnchorLang, language }}
+                {...{ restaurantId, setAnchorLang, language, setAnchorSettings}}
             />
           </div>
         </header>
@@ -189,6 +200,58 @@ const Header = ({
               />
             </IconButton>
           ))}
+        </div>
+      </Popover>
+
+
+      <Popover
+        id={Boolean(anchorSettings) ? 'settings' : undefined}
+        open={Boolean(anchorSettings)}
+        anchorEl={anchorSettings}
+        onClose={() => setAnchorSettings(null)}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center'
+        }}
+      >
+        <div className={styles.footerSettings}>
+          <div  className={styles.popOverTitle}>
+              <h5>           
+                <IconButton
+                  onClick={() => setAnchorSettings(null)}
+                  aria-label='close'
+                  style={{ position: 'sticky', top: '10px', right: '30px' }}
+                >
+                  <CloseRoundedIcon />
+                 </IconButton>
+                  Individualisation 
+              </h5>
+          </div>
+          <div  className={styles.allergensContainer}>
+            {
+              DietTypes.map(item => (
+                  <FoodTypes item={item} preferences={preferences} setPreferences={setPreferences} />
+              ))
+            }
+          </div>
+          <div className={styles.allergensContainer}>
+            <h5>Allergens </h5>
+              {
+                data.allergens.map(allergen => (
+                  <Filter {...{
+                    allergen,
+                    preferences,
+                    setPreferences,
+                    allergens,
+                    setAllergens,
+                  }}/>
+                ))
+              }
+          </div>
         </div>
       </Popover>
 

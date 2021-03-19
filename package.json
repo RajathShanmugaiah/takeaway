@@ -10,8 +10,12 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@stripe/react-stripe-js": "^1.4.0",
+    "@stripe/stripe-js": "^1.13.1",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.21.1",
     "chroma-js": "^2.1.1",
     "hex-to-hsl": "^1.0.2",
     "hsl-rgb": "^1.0.0",

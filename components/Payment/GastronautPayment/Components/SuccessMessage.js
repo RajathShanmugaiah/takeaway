@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Box, Typography } from '@material-ui/core';
-import './gastronautPayment.css';
+// import './gastronautPayment.css';
 import { stringifyAmount } from '../helperFunctions';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import useTranslations from '../../../../hooks/useTranslations';

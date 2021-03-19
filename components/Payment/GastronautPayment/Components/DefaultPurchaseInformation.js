@@ -11,7 +11,6 @@ import {
   Paper
 } from '@material-ui/core';
 import { stringifyAmount } from '../helperFunctions';
-import './gastronautPayment.css';
 
 const translations = {
   de: {

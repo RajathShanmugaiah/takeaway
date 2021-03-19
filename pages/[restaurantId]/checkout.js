@@ -34,7 +34,9 @@ export default function Cart(props) {
     deleteItemFromCart,
     userInfo,
     discount,
-    language
+    language,
+    handleUserInfo,
+    handleConfirmCommand
   } = props;
 
   const { myCartText } = useTranslations(CartPageJson, language);
@@ -52,7 +54,10 @@ export default function Cart(props) {
             cart,
             restaurantId,
             userInfo,
-            language
+            language,
+            handleUserInfo,
+            discount,
+            handleConfirmCommand
           }}
         />
         <div className='hidden-mobile'>

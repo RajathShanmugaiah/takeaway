@@ -228,6 +228,13 @@
   opacity: 1;
 }
 
+.MuiSwitch-colorSecondary.Mui-checked{
+  color: var(--primary-color) !important;
+}
+.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track{
+  background-color: var(--primary-color) !important;
+}
+
 @media screen and (max-width: 600px) {
   
     .hidden-desktop {
