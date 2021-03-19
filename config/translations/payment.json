@@ -1,0 +1,29 @@
+{
+    "de": {
+        "checkout": "Jetzt Bezahlen",
+        "isRequired": "sind Pflichtfelder",
+        "backText":"Bezahlung",
+        "header": "Ihre Zahlung war Erfolgreich",
+        "description": "werden in den nächsten Tagen von Ihrem Konto abgebucht.",
+        "disclaimerSEPA":"Bitte sorgen sie für eine ausreichende Deckung Ihres Bankakkounts anderen falls wird Ihre Zahlung storniert.",
+        "payable_item_paid": "Ihre Zahlung war Erfolgreich"
+      },
+      "en": {
+        "checkout": "Pay now",
+        "isRequired": "are required Fields",
+        "backText":"Back",
+        "header": "Your payment was successful",
+        "description": "will get booked from your bank account within the next days.",
+        "disclaimerSEPA":"Please ensure that you have sufficient funds in your bank account, otherwise your payment will be canceled.",
+        "payable_item_paid": "Your payment was successful"
+      },
+      "fr": {
+        "checkout": "Payer",
+        "isRequired": "sont des champs obligatoires",
+        "backText":"Retour",
+        "header": "Votre paiement est validé!",
+        "description": "seront prélevés sur votre compte d'ici quelques jours.",
+        "disclaimerSEPA":"Merci de vérifier que votre compte est suffisamment provisionné, sinon votre paiement sera annulé.",
+        "payable_item_paid": "Votre paiement est validé!"
+      }
+}

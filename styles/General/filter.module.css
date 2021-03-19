@@ -1,0 +1,12 @@
+.footerSettingsHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.allergenelementContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}

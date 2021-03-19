@@ -1,0 +1,47 @@
+{
+  "de" : {
+    "option_missing" : "Bitte wählen sie eine Option",
+    "item_added":"Das Produkt wurde Ihrem Warenkorb hinzugefügt",
+    "empty_cart":"Ihr Warenkorb ist leer!",
+    "required_missing":"Bitte füllen Sie alle erforderlichen Felder aus",
+    "invalid_email":"Ihr Email Format ist nicht gültig",
+    "terms_and_conditions": "Bitte bestätigen Sie die Geschäftsbedingungen",
+    "payment_method_missing":"Bitte wählen Sie eine Zahlungsmethode aus",
+    "missing_credentials": "Fehlende Anmeldedaten",
+    "invalid_coupon":"Coupon ist ungültig",
+    "no_stock": "Nicht genügend Bestand",
+    "coupon_added":"Der Coupon wurde erfolgreich zur Bestellung hinzugefügt",
+    "succes": "Erfolg",
+    "error":"Oops"
+  },
+  "en" : {
+    "option_missing" : "Please select an option",
+    "item_added":"The item has been added to your cart",
+    "empty_cart":"Your cart is empty!",
+    "required_missing":"Please complete all the required fields",
+    "invalid_email":"Email format is not valid",
+    "terms_and_conditions": "Please accept terms and conditions",
+    "payment_method_missing":"Please choose a payment method",
+    "missing_credentials": "This code does not exist",
+    "invalid_coupon":"This code is not valid anymore",
+    "no_stock": "Not enough stock",
+    "coupon_added":"The coupon has been successfully added to you order",
+    "succes": "Success",
+    "error":"Oops"
+  },
+  "fr" : {
+    "option_missing" : "Merci de sélectionner une option",
+    "item_added":"L'article a bien été ajouté à votre panier",
+    "empty_cart":"Votre panier est vide!",
+    "required_missing":"Merci de compléter tous les champs obligatoires",
+    "invalid_email":"Le format de l'email est invalide",
+    "terms_and_conditions": "Merci d'accepter les conditions générales",
+    "payment_method_missing":"Merci de choisir un moyen de paiement",
+    "missing_credentials": "Ce code n'existe pas",
+    "invalid_coupon":"Ce code n'est plus valable",
+    "no_stock": "Les stocks sont insuffisants",
+    "coupon_added":"Le code a bien été appliqué à votre commande.",
+    "succes": "Victoire!",
+    "error":"Oups"
+  }
+}

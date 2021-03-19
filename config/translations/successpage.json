@@ -1,0 +1,38 @@
+{
+    "de":{
+        "thankYouText":"Vielen Dank für Ihre Bestellung!",
+        "productNameText":"Produktname",
+        "subTotalText":"Zwischensumme",
+        "orderInfoText":"Bestellinformationen",
+        "orderDate":"Bestelldatum",
+        "nameText":"Vorname & Nachname",
+        "shippingText":"Lieferadresse",
+        "paymentText":"Zahlungsmethode",
+        "orderText":"Bestellnummer",
+        "continueText":"weiter einkaufen"
+    },
+    "en":{
+        "thankYouText":"Thank You For Your Order!",
+        "productNameText":"Product Name",
+        "subTotalText":"SubTotal",
+        "orderInfoText":"Order Information",
+        "orderDate":"Order Date",
+        "nameText":"Name & Surname",
+        "shippingText":"Shipping Address",
+        "paymentText":"Payment Method",
+        "orderText":"Order Number",
+        "continueText":"Continue Shopping"
+    },
+    "fr":{
+        "thankYouText":"Merci pour votre commande!",
+        "productNameText":"Produit",
+        "subTotalText":"Sous-total",
+        "orderInfoText":"Informations sur la commande",
+        "orderDate":"Date",
+        "nameText":"Nom et Prénom",
+        "shippingText":"Adresse de livraison",
+        "paymentText":"Moyen de paiment ",
+        "orderText":"Numéro de commande",
+        "continueText":"Retour a la boutique"
+    }
+}
