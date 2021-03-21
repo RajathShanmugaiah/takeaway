@@ -34,18 +34,21 @@ const CartProducts = ({ item }) => {
 
 const SuccessPage = ({ restaurantId, savedOrder, language = 'de'}) => {
   console.log(savedOrder);
-  // const {
-  //   cart,
-  //   customer,
-  //   address,
-  //   paymentMethod,
-  //   orderMethod,
-  //   orderNumber,
-  //   coupon,
-  //   voucher
-  // } = savedOrder;
-  // const date = new Date().toISOString().slice(0, 10);
-  // const TodayDate = date.split('-').reverse().join('-');
+  const {
+    cart,
+    name,
+    phone,
+    company,
+    email,
+
+    paymentMethod,
+    paymentMethod,
+    orderNumber,
+    coupon,
+    voucher
+  } = savedOrder;
+  const date = new Date().toISOString().slice(0, 10);
+  const TodayDate = date.split('-').reverse().join('-');
 
   // const pricesArray = cart.map(item => {
   //   if (!item.option) {

@@ -7,59 +7,78 @@
     padding: 20px 0%;
     display: flex;
     justify-content: center;
-    background: white;
-    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
   }
+
+#onscrollHeader{
+  z-index: 1000;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0%;
+  display: flex;
+  justify-content: center;
+  background: white; 
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
   
-  #header .headerElem {
+  #header .headerElem,  #onscrollHeader .headerElem{
     width: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  #header .headerElem  img{
+    display: none;
+  }
+  #onscrollHeader .headerElem  img{
+    display: block;
+  }
   
-  #header .actionButtonsDesktop {
+  #header .actionButtonsDesktop, #onscrollHeader .actionButtonsDesktop{
     width: 100%;
     text-align: right;
     display: block;
     position: relative;
   }
   
-  #header .actionButtonsMobile {
+  #header .actionButtonsMobile, #onscrollHeader .actionButtonsMobile {
     width: 100%;
     text-align: right;
     display: none;
   }
   
-  #header .logoElemDesktop {
+  #header .logoElemDesktop, #onscrollHeader .logoElemDesktop {
     display: block;
   }
   
-  #header .logoElemMobile {
+  #header .logoElemMobile, #onscrollHeader .logoElemMobile  {
     display: none;
   }
   
-  #header .restaurantName {
+  #header .restaurantName, #onscrollHeader .restaurantName   {
     font-size: 1.8rem;
     cursor: pointer;
   }
   
-  #header .logo {
+  #header .logo , #onscrollHeader .logo  {
     max-width: 200px;
     height: auto;
     max-height: 50px;
     cursor: pointer;
   }
   
-  #header .logo.bright {
+  #header .logo.bright , #onscrollHeader .logo .bright {
     filter: invert(1);
   }
   
-  #header .mobile-nav {
+  #header .mobile-nav , #onscrollHeader .mobile-nav {
     display: none;
   }
   
-  #header .desktop-nav {
+  #header .desktop-nav, #onscrollHeader .desktop-nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -68,11 +87,11 @@
     padding: 0;
   }
   
-  #header .headernavContainer {
+  #header .headernavContainer, #onscrollHeader .headernavContainer {
     justify-content: flex-start;
   }
   
-  #header li {
+  #header li, #onscrollHeader li {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 24px;
@@ -84,19 +103,19 @@
     white-space: nowrap;
   }
   
-  #header li a {
+  #header li a, #onscrollHeader li a {
     color: var(--header-font);
   }
   
-  #header li.active {
+  #header li.active, #onscrollHeader li.active {
     text-decoration: underline;
   }
   
-  #header .notificationContainer {
+  #header .notificationContainer, #onscrollHeader .notificationContainer {
     position: relative;
   }
   
-  #header .notification {
+  #header .notification, #onscrollHeader .notification{
     position: absolute;
     top: 5px;
     right: 5px;
@@ -115,7 +134,7 @@
     flex-direction: column;
   }
   
-  #header .header-search-input:focus {
+  #header .header-search-input:focus, #onscrollHeader .header-search-input:focus {
     outline: none;
   }
 
@@ -142,59 +161,59 @@
 
 
   @media screen and (max-width: 1136px) {
-    #header li {
+    #header li, #onscrollHeader li {
       font-size: 1rem;
     }
   }
   @media screen and (max-width: 950px) {
-    #header .desktop-nav {
+    #header .desktop-nav, #onscrollHeader .desktop-nav{
       display: none;
     }
   
-    #header .mobile-nav {
+    #header .mobile-nav, #onscrollHeader .mobile-nav{
       display: block;
     }
   }
   @media screen and (max-width: 600px) {
-    #header {
+    #header, #onscrollHeader {
       padding: 5px 5px;
     }
   
-    #header .actionButtonsDesktop {
+    #header .actionButtonsDesktop, #onscrollHeader .actionButtonsDesktop{
       justify-content: flex-end;
       display: none;
     }
   
-    #header .actionButtonsMobile {
+    #header .actionButtonsMobile, #onscrollHeader .actionButtonsMobile{
       justify-content: flex-end;
       display: flex;
     }
   
-    #header .header-nav-container {
+    #header .header-nav-container, #onscrollHeader .header-nav-container{
       justify-content: flex-start;
       padding-left: 10px;
     }
   
-    #header .desktop-nav {
+    #header .desktop-nav, #onscrollHeader .desktop-nav{
       display: none;
     }
   
-    #header .mobile-nav {
+    #header .mobile-nav, #onscrollHeader .mobile-nav{
       display: block;
     }
   
-    #header .searchIcon {
+    #header .searchIcon, #onscrollHeader .searchIcon{
       display: none;
     }
   
-    #header .logo {
+    #header .logo, #onscrollHeader .logo{
       max-width: 130px;
       height: auto;
       max-height: 40px;
       cursor: pointer;
     }
   
-    #header .notification {
+    #header .notification, #onscrollHeader .notification{
       width: 16px;
       height: 16px;
       display: flex;
@@ -204,18 +223,18 @@
       padding-top: 0;
     }
   
-    #header #mobile-menu li {
+    #header #mobile-menu li, #onscrollHeader #mobile-menu li{
       font-size: 1rem;
       padding: 0 12px;
       font-weight: bold;
       cursor: pointer;
     }
   
-    #header .logoElemDesktop {
+    #header .logoElemDesktop, #onscrollHeader .logoElemDesktop {
       display: none;
     }
   
-    #header .logoElemMobile {
+    #header .logoElemMobile, #onscrollHeader .logoElemMobile {
       display: block;
     }
   

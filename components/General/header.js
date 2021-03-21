@@ -109,11 +109,14 @@ const Header = ({
     decreaseItemFromCart = () =>{},
     increaseItemFromCart = () =>{}
 }) => {
+
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorLang, setAnchorLang] = useState(null);
     const [anchorSearch, setAnchorSearch] = useState(null);
     const [anchorSettings, setAnchorSettings] = useState(null);
     const DietTypes = ["vegan","vegetarian","alkoholic"]
+    
+
     return (
       <>
         <header id={styles.header}>

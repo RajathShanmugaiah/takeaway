@@ -59,7 +59,7 @@ export default function RestaurantHomePage(props) {
         <>
             <HeroImage image={data.restaurant.headerBackground? data.restaurant.headerBackground : data.restaurant.logo}/>
             <div className="mealsOuterContainer">
-                <CategoryTabs tabs = {data.categories} id={data.categories[0].id} restaurant={restaurantId} {...{categoryId, categoryData, categoryIntro, categoryItems, preferences, allergens}}/>
+                    <CategoryTabs tabs = {data.categories} id={data.categories[0].id} restaurant={restaurantId} {...{categoryId, categoryData, categoryIntro, categoryItems, preferences, allergens}}/>
                 <div id="itemCardsContainer">
                     <div className="card">
                         <CategoryHomePage {...{categoryId, categoryData, categoryIntro, categoryItems, cart,setCart, handleChangeCart, AddToCart, preferences, allergens}}/>
